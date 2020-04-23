@@ -61,6 +61,7 @@ if __name__ == '__main__':
     model.fit(matrices['train'], epochs=100, num_threads=1)
 
     # Save the trained models
+    os.mkdir(args.model_dir)
     joblib.dump(model, os.path.join(args.model_dir, f"model_{current_date}.joblib"))
     print(f"Model save successful, path: models/model_{current_date}.joblib")
 
